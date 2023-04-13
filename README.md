@@ -70,7 +70,7 @@ const TODO: Context;
 Extends the parent context with an abortable signal. The signal is aborted when
 the returned abort function is called or when the parent context is aborted.
 
-The returned `about` function **MUST** be called to avoid memory leaks.
+The returned `abort` function **MUST** be called to avoid memory leaks.
 
 ### withTimeout(parent: [Context](#context), duration: number): [Abortable](#abortable);
 
@@ -81,7 +81,7 @@ Extends the parent context with an abortable signal. The signal is aborted when
 the returned abort function is called, when the parent context is aborted or
 when the timeout is reached.
 
-The returned `about` function **MUST** be called to avoid memory leaks.
+The returned `abort` function **MUST** be called to avoid memory leaks.
 
 ### withDeadline(parent: [Context](#context), deadline: Date | number): [Abortable](#abortable);
 
@@ -92,7 +92,7 @@ Extends the parent context with an abortable signal. The signal is aborted when
 the returned abort function is called, when the parent context is aborted or
 when the deadline is reached.
 
-The returned `about` function **MUST** be called to avoid memory leaks.
+The returned `abort` function **MUST** be called to avoid memory leaks.
 
 ### withValues(parent: [Context](#context), values: Record<symbol | string, unknown>): [Context](#context);
 
