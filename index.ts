@@ -26,11 +26,18 @@ export const background = rootContext();
 export const TODO = rootContext();
 
 export const requestIdKey = Symbol("requestId");
-
 export function getRequestId(ctx: Context): string | undefined {
   if (requestIdKey in ctx) {
     // typescript doesn't like symbols, but it's safe
     return String((ctx as Record<typeof requestIdKey, unknown>)[requestIdKey]);
+  }
+}
+
+export const actorKey = Symbol("actor");
+export function getActor(ctx: Context): string | undefined {
+  if (actorKey in ctx) {
+    // typescript doesn't like symbols, but it's safe
+    return String((ctx as Record<typeof actorKey, unknown>)[actorKey]);
   }
 }
 
